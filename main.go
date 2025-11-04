@@ -5,6 +5,7 @@ import (
 	"log"
 
 	db "github.com/eliseudr/blog_api/database"
+	blog "github.com/eliseudr/blog_api/server"
 )
 
 func main() {
@@ -22,6 +23,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	// Ignore the database variable
-	_ = database
+	// Initialize the API server
+	server := blog.NewBlogAPIServer(":8080", database)
+	log.Fatal(server.Run())
 }

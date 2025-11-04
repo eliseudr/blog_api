@@ -1,0 +1,142 @@
+type: collection.insomnia.rest/5.0
+name: Blog API
+meta:
+  id: wrk_b984d707b443455490fab574343f36eb
+  created: 1762205678925
+  modified: 1762205678925
+collection:
+  - name: Comments
+    meta:
+      id: fld_c03a7b5dfa3342019fc42269423efb59
+      created: 1762205883558
+      modified: 1762205883558
+      sortKey: -1762205883558
+    children:
+      - url: localhost:8080/api/posts/2/comments
+        name: api/posts/{id}/comments
+        meta:
+          id: req_ced6d98ac5a6446384088ecfce522b2b
+          created: 1762205784632
+          modified: 1762228403614
+          isPrivate: false
+          sortKey: -1762205891053
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "content": "This is not a great post! 😡😡"
+            }
+        parameters:
+          - id: pair_017c7baf46204f5094222478b24c6f30
+            disabled: true
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Posts
+    meta:
+      id: fld_92871f027f284cd798afdb865668cce3
+      created: 1762205904045
+      modified: 1762205909079
+      sortKey: -1761155891846.5
+    children:
+      - url: localhost:8080/api/posts
+        name: api/posts
+        meta:
+          id: req_0428a8e350cb45f7b0e34b464e14c9c0
+          created: 1762205683646
+          modified: 1762229351124
+          isPrivate: false
+          sortKey: -1762205910854
+        method: GET
+        parameters:
+          - id: pair_d5abe1d69d7645c29325879252b4f5f4
+            name: id
+            value: "1"
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/posts
+        name: api/posts
+        meta:
+          id: req_eecade13342246c3a6c1882117536771
+          created: 1762205745307
+          modified: 1762229355461
+          isPrivate: false
+          sortKey: -1762205910654
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+              "title": "My first post in this blog",
+              "content": "This is the content of my blog post"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: localhost:8080/api/posts/2
+        name: api/posts/{id}
+        meta:
+          id: req_554a415036a142e5ac776ec094668f7e
+          created: 1762205770257
+          modified: 1762229377899
+          isPrivate: false
+          sortKey: -1762205910754
+        method: GET
+        parameters:
+          - id: pair_342ed1c5d5e748f0a80ed38addc5c48d
+            disabled: true
+        headers:
+          - name: User-Agent
+            value: insomnia/11.0.2
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_c9be5528470465eabb481459fd73365c3986dd24
+    created: 1762205678927
+    modified: 1762205678927
+environments:
+  name: Base Environment
+  meta:
+    id: env_c9be5528470465eabb481459fd73365c3986dd24
+    created: 1762205678926
+    modified: 1762205678926
+    isPrivate: false
